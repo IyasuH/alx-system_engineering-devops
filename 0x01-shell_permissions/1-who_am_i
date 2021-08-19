@@ -1,2 +1,3 @@
 #!/bin/bash
-id -u -n
+echo(id -u -n
+)
