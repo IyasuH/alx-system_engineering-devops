@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -l | grep -c ^d
+ls -la | grep -v total | wc -l
