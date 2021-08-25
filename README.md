@@ -1,1 +1,0 @@
-# this file is about printing working directory
