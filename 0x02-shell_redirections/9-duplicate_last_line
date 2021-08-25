@@ -1,2 +1,2 @@
 #!/bin/bash
-paste -d "\n" $(yes iacta|head -1) >> iacta
+paste -d "\n" $(yes iacta|head -1) >> /root/alx-system_engineering-devops/0x02-shell_redirections/iacta
