@@ -1,2 +1,2 @@
 #!/usr/bin/env ruby
-puts ARGV[0].scan(/REGEX(school, school)/).join
+puts ARGV[0].scan(/REGEX(School, School)/).join
