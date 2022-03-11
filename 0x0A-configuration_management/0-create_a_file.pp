@@ -1,3 +1,4 @@
+# create a file using Puppet
 node default {
   file { '/tmp/school':
   ensure  => 'present',
