@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# SSh config to use the private key ~/.ssh/school and to be configured to refuse to authenicate using password
+ssh -i ~/.ssh/school
+PasswordAuthentication no
