@@ -6,7 +6,7 @@ file_line {'private file':
 }
 file_line {'password off':
   ensure => 'present',
-  path   => 'etc/ssh/ssh_config',
+  path   => '/etc/ssh/ssh_config',
   line   => 'PasswordAuthentication no',
   match  => 'PasswordAuthentication yes',
 }
