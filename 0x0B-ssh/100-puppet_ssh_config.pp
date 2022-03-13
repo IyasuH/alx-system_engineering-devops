@@ -2,11 +2,11 @@
 file_line {'private file':
   ensure => 'present',
   path   => '/etc/ssh/ssh_config',
-  line   => '~/.ssh/school',
+  line   => '    IdentityFile ~/.ssh/id_dsa'
 }
 file_line {'password off':
   ensure => 'present',
   path   => '/etc/ssh/ssh_config',
-  line   => 'PasswordAuthentication no',
+  line   => '    PasswordAuthentication no',
   match  => 'PasswordAuthentication yes',
 }
