@@ -3,7 +3,11 @@
 sudo apt-get -y update
 sudo apt-get -y install nginx
 sudo chown -R "$USER":"$USER" /var/www/html
+# Hello World string
 echo "Hello World!" > /var/www/html/index.html
+# redirects to another page
+sed -i "/server_name 34.139.86.96 location /redirect_me {rewrite ^/redirect_me(.*)$ https://www/youtube.com/watch?v=QH2-TGUlwu4/$1 permanent; }" /etc/nginx/sites-enabled/default
+# custom 404 Error page
 echo "Ceci n'est pas une page" | sudo tee /usr/share/nginx/html/custom_404.html
 sed -i "error 404 /custom_404.html; location = /custom_404.html {root /usr/share/nginx/html; internal;}" /etc/nginx/sites-enabled/default
-sed -i "error 404 /custom_404.html; location = /custom_404.html {root /usr/share/nginx/html; internal;}" /etc/nginx/sites-enabled/mozazgi.tech.conf
+service nginx restart
