@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# configure Nginx server so that /redirct_me is redirecting to another page
+# and the redirection is 301 Moved permanently
+sudo apt-get -y update
+sudo apt-get -y install nginx
+sudo chown -R "$USER":"$USER" /var/www/html
+echo "Hello World!" > /var/www/html/index.html
+sed -i "/server_name 34.139.86.96 location /redirect_me {rewrite ^/redirect_me(.*)$ https://www/youtube.com/watch?v=QH2-TGUlwu4/$1 permanent; }" /etc/nginx/sites-enabled/mozazgi.tech.conf
+service nginx restart
