@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# configure HAproxy to web-01 and web-02
+# distribute load using roundrobin algorithm
+sudo apt-get install --no-install-recommends software-properties-common
+sudo add-apt-repository ppa:vbernat/haproxy-2.4
+sudo apt-get install haproxy=2.4.\*
+sed -i "frontend http\
+	bind *:80\
+	mode http\
+	default_backend web-backend\
+\
+backend web-backend\
+	balance roundrobin\
+	mode http\
+	server 1484-web-01 mozazgi.tech:80 check\
+	server 1484-web-02 mozazgi.tech:80 check" /etc/haproxy/haproxy.cfg
+sudo systemctl restart haproxy
