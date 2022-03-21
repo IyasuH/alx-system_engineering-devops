@@ -4,14 +4,5 @@
 sudo apt-get install --no-install-recommends software-properties-common
 sudo add-apt-repository ppa:vbernat/haproxy-2.4
 sudo apt-get install haproxy=2.4.\*
-sed -i "frontend http\
-	bind *:80\
-	mode http\
-	default_backend web-backend\
-\
-backend web-backend\
-	balance roundrobin\
-	mode http\
-	server 1484-web-01 mozazgi.tech:80 check\
-	server 1484-web-02 mozazgi.tech:80 check" /etc/haproxy/haproxy.cfg
+sed -i "\nfrontend http\n\tbind *:80\n\tmode http\n\tdefault_backend web-backend\n\nbackend web-backend\n\tbalace roundrobin\n\tmode http\n\tserver 1484-web-01 34.139.86.96:80 check\n\tserver 1484-web-02 34.204.187.38:80 check\n" /etc/haproxy/haproxy.cfg
 sudo systemctl restart haproxy
