@@ -2,5 +2,8 @@
 # Configure Nginx so that its HTTP response contains a custom header (on web-01 and web-02)
 sudo apt-get update
 sudo apt-get inistall nginx
+sudo chown -R "$USER":"$USR" /var/www/html
+echo "Hello World!" > /var/www/html/index.html
+sed -i "/server_name 34.139.86.96 location /redirect_me {rewrite ^/redirect_me(.*)$ https://www/youtube.com/watch?v=QH2-TGUlwu4/$1 permanent; }" /etc/nginx/sites-enabled/default
 sudo sed -i "\tadd_header X-Served-By $HOSTNAME;\n" /etc/nginx/nginx.conf
 sudo service nginx restart
