@@ -4,5 +4,6 @@
 sudo apt-get install --no-install-recommends software-properties-common
 sudo add-apt-repository ppa:vbernat/haproxy-2.4
 sudo apt-get install haproxy=2.4.\*
+sudo chown $USER:$USER /etc/haproxy/haproxy.cfg
 sudo sed -i "\nfrontend http\n\tbind *:80\n\tmode http\n\tdefault_backend web-backend\n\nbackend web-backend\n\tbalace roundrobin\n\tmode http\n\tserver 1484-web-01 34.139.86.96:80 check\n\tserver 1484-web-02 34.204.187.38:80 check\n" /etc/haproxy/haproxy.cfg
 sudo service nginx restart
