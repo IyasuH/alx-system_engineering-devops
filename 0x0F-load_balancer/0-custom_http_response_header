@@ -3,4 +3,4 @@
 sudo apt-get update
 sudo apt-get inistall nginx
 sudo sed -i "\tadd_header X-Served-By $HOSTNAME;\n" /etc/nginx/nginx.conf
-sudo ervice nginx restart
+sudo service nginx restart
