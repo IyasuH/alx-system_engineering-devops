@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Bash script that configures a server to run and listn Nginx on port 80
+sed -i 's/8080/80/g' /etc/nginx/sites-enabled/default
+sudo service nginx restart
