@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# MySQL backup - dumping MySQL data then compressing them and sorting them in a different data center
+mysqldump -uroot --all-databases > backup.sql
+tar -czf $(date +%d-%m-%y).tar.gz backup.sql
