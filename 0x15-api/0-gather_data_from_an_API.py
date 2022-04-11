@@ -16,13 +16,13 @@ if __name__ == "__main__":
     nam = ""
     comm = []
     for a in x:
-        if a['userId'] == int(sys.argv[1]):
+        if a.get('userId') == int(sys.argv[1]):
             for b in y:
-                if b['id'] == int(sys.argv[1]):
-                    nam = b['name']
+                if b.get('id') == int(sys.argv[1]):
+                    nam = b.get('name')
             if a['completed']:
                 com = com + 1
-                comm.append(a['title'])
+                comm.append(a.get('title'))
             else:
                 pass
             tot = tot + 1
