@@ -23,5 +23,5 @@ if __name__ == "__main__":
                 nm = {"username": nam, "task": a.get('title'),
                       "completed": a.get('completed')}
                 nn.append(nm)
-                temp = {b.get("id"): nn}
+                temp = {a.get("userId"): nn}
         f.write(json.dumps(temp))
